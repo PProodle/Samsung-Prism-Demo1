@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio 4</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .left, .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left {
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+        }
+        .right {
+            background-color: #fff;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .vocal-section {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .other-audio-section {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        video, audio {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #007bff;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+        }
+        .buttons a {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .buttons a:hover {
+            background-color: #00408b;
+        }
+        .vocal-button-container {
+            margin-bottom: 20px; /* Adds space below the button */
+        }
+        .vocal-button-container button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .vocal-button-container button:hover {
+            background-color: #ff3b2e;
+        }
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            margin-top: 20px; /* Adds space above the dropdown content */
+        }
+        .dropdown-content audio {
+            width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .show {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AUDIO 4</h1>
+    </header>
+    <div class="content">
+        <div class="left">
+            <h3>MIXTURE VIDEO</h3>
+            <video controls>
+                <source src="path/to/your/video4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>MIXTURE AUDIO</h3>
+            <audio controls>
+                <source src="path/to/your/audio4.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="right">
+            <div class="vocal-section">
+                <div class="vocal-button-container">
+                    <button onclick="toggleVocals()">Vocals</button>
+                </div>
+                <div id="vocals" class="dropdown-content">
+                    <h3>Vocal 1</h3>
+                    <audio controls>
+                        <source src="output\output\5\vocals.wav" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <h3>Vocal 2</h3>
+                    <audio controls>
+                        <source src="path/to/your/vocal2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <div class="other-audio-section">
+                <h3>Drums</h3>
+                <audio controls>
+                    <source src="output\output\5\drums.wav" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <h3>Bass</h3>
+                <audio controls>
+                    <source src="output\output\5\bass.wav" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <h3>Others</h3>
+                <audio controls>
+                    <source src="output\output\5\other.wav" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="audio3.html">Previous Audio</a>
+        <a href="audio5.html">Next Audio</a>
+    </div>
+    <script>
+        function toggleVocals() {
+            var vocalsDiv = document.getElementById('vocals');
+            if (vocalsDiv.classList.contains('show')) {
+                vocalsDiv.classList.remove('show');
+            } else {
+                vocalsDiv.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>
